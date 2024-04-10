@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+</head>
+<body>
+    <h1>Resultados</h1>
+    {% if objetivos %}
+        <h2>Objetivos encontrados:</h2>
+        <ul>
+            {% for objetivo in objetivos %}
+                <li>{{ objetivo }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron objetivos en el documento.</p>
+    {% endif %}
+
+    {% if justificaciones %}
+        <h2>Justificaciones encontradas:</h2>
+        <ul>
+            {% for justificacion in justificaciones %}
+                <li>{{ justificacion }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron justificaciones en las páginas después de la página 5 del PDF.</p>
+    {% endif %}
+</body>
+</html>
